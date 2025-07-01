@@ -1,0 +1,27 @@
+.auth-container {
+  @apply min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8;
+}
+
+.auth-card {
+  @apply max-w-md w-full space-y-8;
+}
+
+.auth-header {
+  @apply text-center;
+}
+
+.auth-title {
+  @apply mt-6 text-3xl font-extrabold text-gray-900;
+}
+
+.auth-subtitle {
+  @apply mt-2 text-sm text-gray-600;
+}
+
+.auth-form {
+  @apply mt-8 space-y-6;
+}
+
+.auth-link {
+  @apply font-medium text-blue-600 hover:text-blue-500;
+}

@@ -1,0 +1,47 @@
+.sidebar {
+  @apply w-64 bg-white border-r border-gray-200 flex flex-col h-full;
+}
+
+.sidebar-header {
+  @apply p-4 border-b border-gray-200;
+}
+
+.sidebar-content {
+  @apply flex-1 overflow-y-auto;
+}
+
+.sidebar-section {
+  @apply p-4 border-b border-gray-200;
+}
+
+.sidebar-section-title {
+  @apply text-sm font-medium text-gray-500 uppercase tracking-wider mb-2;
+}
+
+.sidebar-item {
+  @apply p-2 hover:bg-gray-50 rounded-lg cursor-pointer;
+}
+
+.user-avatar {
+  @apply h-8 w-8 rounded-full object-cover;
+}
+
+.online-status {
+  @apply absolute bottom-0 right-0 block rounded-full ring-2 ring-white;
+}
+
+.online-status-online {
+  @apply bg-green-500;
+}
+
+.online-status-offline {
+  @apply bg-gray-400;
+}
+
+.online-status-away {
+  @apply bg-yellow-500;
+}
+
+.online-status-busy {
+  @apply bg-red-500;
+}

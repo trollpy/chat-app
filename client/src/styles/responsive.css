@@ -1,0 +1,27 @@
+@media (max-width: 640px) {
+  .sidebar {
+    @apply w-full;
+  }
+  
+  .chat-window {
+    @apply hidden;
+  }
+  
+  .mobile-menu {
+    @apply block;
+  }
+  
+  .desktop-menu {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-menu {
+    @apply hidden;
+  }
+  
+  .desktop-menu {
+    @apply block;
+  }
+}

@@ -1,0 +1,27 @@
+.chat-message {
+  @apply max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg p-3;
+}
+
+.chat-message-current-user {
+  @apply bg-blue-100 text-blue-900;
+}
+
+.chat-message-other-user {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.message-reaction {
+  @apply text-xs;
+}
+
+.message-time {
+  @apply text-xs text-gray-500;
+}
+
+.typing-indicator {
+  @apply flex items-center space-x-2 mb-2;
+}
+
+.typing-dot {
+  @apply h-2 w-2 bg-gray-400 rounded-full animate-bounce;
+}
