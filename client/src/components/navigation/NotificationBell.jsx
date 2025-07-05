@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoNotificationsOutline, IoNotifications } from 'react-icons/io5';
-import { useNotifications } from '../../hooks/useNotifications';
+import useNotifications from '../../hooks/useNotifications';
 
 const NotificationBell = () => {
   const [isOpen, setIsOpen] = useState(false);

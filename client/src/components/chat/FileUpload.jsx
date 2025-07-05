@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { useChat } from '../../hooks/useChat';
 
 const FileUpload = ({ children, onFileUpload }) => {
   const { uploadFile } = useChat();
-  const fileInputRef = React.createRef();
+  const fileInputRef = useRef();
 
   const handleClick = () => {
     fileInputRef.current.click();

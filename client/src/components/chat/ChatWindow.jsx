@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+// import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import TypingIndicator from './TypingIndicator';
@@ -9,7 +10,7 @@ const ChatWindow = ({ room }) => {
   const { messages, sendMessage, isTyping, setIsTyping } = useChat();
   const { socket } = useSocket();
   const messagesEndRef = useRef(null);
-a
+
   useEffect(() => {
     if (room) {
       socket.emit('joinRoom', { roomId: room._id, userId: room.userId });

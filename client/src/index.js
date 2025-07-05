@@ -1,20 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import { createRoot } from 'react-dom/client';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { SocketProvider } from './context/SocketContext';
+import './index.css'; // Import your global styles
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <SocketProvider>
-          <App />
-        </SocketProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );

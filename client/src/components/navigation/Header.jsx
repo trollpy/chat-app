@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '../common/Avatar';
 import NotificationBell from './NotificationBell';
-import { useAuth } from '../../hooks/useAuth';
-
+// import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../context/AuthContext';
 const Header = () => {
   const { user, logout } = useAuth();
 

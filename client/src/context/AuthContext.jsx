@@ -1,11 +1,18 @@
 // src/context/AuthContext.jsx
-
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import api from '../services/api';
 
-const AuthContext = createContext();
+// Initialize context with a default value
+const AuthContext = createContext({
+  user: null,
+  loading: true,
+  login: () => {},
+  register: () => {},
+  logout: () => {},
+  updateProfile: () => {}
+});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -69,11 +76,27 @@ export const AuthProvider = ({ children }) => {
     setUser({ ...user, ...data });
   };
 
+  // Memoize the context value to prevent unnecessary re-renders
+  const value = useMemo(() => ({
+    user,
+    loading,
+    login,
+    register,
+    logout,
+    updateProfile
+  }), [user, loading]);
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, updateProfile }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
